@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Project</title>
+    <!-- Police d'écriture -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-CqrrVYjC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bt0yoQo6.css">
+  </head>
+  <body>
+    <div class="grid">
+      <div class="left-header"></div>
+      <div class="gameView">
+        <div class="topBar">
+          <div class="enemyDetails" id="enemy1">
+            <input type="text" id="enemyNameDisplay1" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="enemyLife1"></div>
+            </div>
+            <!-- Dégâts flottants pour l'ennemi 1 (vers le bas) -->
+            <div
+              class="floating-damage-container enemy"
+              id="enemyDamage1"
+            ></div>
+          </div>
+          <div class="enemyDetails" id="enemy2">
+            <input type="text" id="enemyNameDisplay2" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="enemyLife2"></div>
+            </div>
+            <div
+              class="floating-damage-container enemy"
+              id="enemyDamage2"
+            ></div>
+          </div>
+          <div class="enemyDetails" id="enemy3">
+            <input type="text" id="enemyNameDisplay3" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="enemyLife3"></div>
+            </div>
+            <div
+              class="floating-damage-container enemy"
+              id="enemyDamage3"
+            ></div>
+          </div>
+          <div class="enemyDetails" id="enemy4">
+            <input type="text" id="enemyNameDisplay4" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="enemyLife4"></div>
+            </div>
+            <div
+              class="floating-damage-container enemy"
+              id="enemyDamage4"
+            ></div>
+          </div>
+          <div class="enemyDetails" id="enemy5">
+            <input type="text" id="enemyNameDisplay5" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="enemyLife5"></div>
+            </div>
+            <div
+              class="floating-damage-container enemy"
+              id="enemyDamage5"
+            ></div>
+          </div>
+          <div class="noEnemy"></div>
+        </div>
+        <div class="content-area">
+          <div class="titleScreen"></div>
+          <div class="battleScreen">
+            <input type="button" id="attackBtn" value="Attaque" />
+            <button id="abilityBtn" data-value="Compétence">
+              <span class="button-text">Compétence</span>
+              <span id="cooldownText" class="cooldown-text"></span>
+            </button>
+            <input type="button" id="defendBtn" value="Défense" />
+            <input type="button" id="returnBtn" value="Retour" />
+          </div>
+
+          <div class="shopScreen"></div>
+        </div>
+        <div class="bottomBar">
+          <div class="heroDetails" id="hero1">
+            <input type="text" id="heroNameDisplay1" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="heroLife1"></div>
+            </div>
+            <!-- Dégâts flottants pour le héros 1 (vers le haut) -->
+            <div class="floating-damage-container hero" id="heroDamage1"></div>
+            <div class="heroActionSummary">
+              <input type="text" id="heroAction1" />
+              <input type="text" id="heroTarget1" />
+            </div>
+          </div>
+          <div class="heroDetails" id="hero2">
+            <input type="text" id="heroNameDisplay2" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="heroLife2"></div>
+            </div>
+            <div class="floating-damage-container hero" id="heroDamage2"></div>
+            <div class="heroActionSummary">
+              <input type="text" id="heroAction2" />
+              <input type="text" id="heroTarget2" />
+            </div>
+          </div>
+          <div class="heroDetails" id="hero3">
+            <input type="text" id="heroNameDisplay3" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="heroLife3"></div>
+            </div>
+            <div class="floating-damage-container hero" id="heroDamage3"></div>
+            <div class="heroActionSummary">
+              <input type="text" id="heroAction3" />
+              <input type="text" id="heroTarget3" />
+            </div>
+          </div>
+          <div class="heroDetails" id="hero4">
+            <input type="text" id="heroNameDisplay4" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="heroLife4"></div>
+            </div>
+            <div class="floating-damage-container hero" id="heroDamage4"></div>
+            <div class="heroActionSummary">
+              <input type="text" id="heroAction4" />
+              <input type="text" id="heroTarget4" />
+            </div>
+          </div>
+          <div class="heroDetails" id="hero5">
+            <input type="text" id="heroNameDisplay5" />
+            <div class="health-bar-container">
+              <div class="health-bar" id="heroLife5"></div>
+            </div>
+            <div class="floating-damage-container hero" id="heroDamage5"></div>
+            <div class="heroActionSummary">
+              <input type="text" id="heroAction5" />
+              <input type="text" id="heroTarget5" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainMenu" style="display: none">
+        <!-- Menu principal caché par défaut -->
+        <h1>Menu Principal</h1>
+
+        <div class="inventorySection">
+          <h2>Inventaire des Héros</h2>
+          <div class="hero-inventory-container" id="heroInventories">
+            <!-- Contenu dynamiquement généré pour chaque héros -->
+            <div class="hero-inventory" id="hero1Inventory">
+              <h3>Héros 1</h3>
+              <ul class="item-list" id="hero1Items">
+                <!-- Objets du héros 1 -->
+              </ul>
+            </div>
+            <!-- Répéter pour chaque héros -->
+          </div>
+          <div class="fixed-items">
+            <h3>Objets Non Distribués</h3>
+            <ul id="unassignedItems">
+              <!-- Liste des objets non distribués ici -->
+            </ul>
+          </div>
+        </div>
+
+        <div class="heroSelectionSection">
+          <h2>Sélectionner des Héros</h2>
+          <div id="heroSelectionContainer">
+            <!-- Options de sélection des héros -->
+            <button class="select-hero-btn" id="hero1Select">Héros 1</button>
+            <button class="select-hero-btn" id="hero2Select">Héros 2</button>
+            <button class="select-hero-btn" id="hero3Select">Héros 3</button>
+            <!-- Ajouter d'autres héros selon le besoin -->
+          </div>
+          <button id="confirmSelectionBtn">Confirmer Sélection</button>
+        </div>
+
+        <button id="exitMenuBtn">Sortir du Menu</button>
+      </div>
+      <div id="startScreen"></div>
+      <div class="right-header"></div>
+      <div class="menu">
+        <input type="button" id="startBtn" value="Démarer" />
+        <input type="button" id="shopBtn" value="Boutique" />
+      </div>
+      <div class="inventory">
+        <div class="tabs" id="inventoryTabs"></div>
+        <div class="tab-content-container" id="inventoryContent"></div>
+      </div>
+      <div class="playerStats"></div>
+      <div class="artifact">
+        <div class="tabs" id="artifactTabs"></div>
+        <div class="tab-content-container" id="artifactContent"></div>
+      </div>
+    </div>
+    <!-- Écran de transition -->
+    <div id="transition"></div>
+    <!-- Lien vers le fichier index.js pour gérer les imports de JS -->
+  </body>
+</html>
